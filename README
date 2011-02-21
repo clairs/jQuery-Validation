@@ -1,0 +1,19 @@
+jQuery Validation - v1.0
+------------------------
+
+Requires: jQuery 1.4.3+, jQuery UI 1.5
+
+Form validation which checks both after you've changed the value of a field and after form submission
+To use:
+Ensure fields you want to validate match the rules specified below, then add the javascript to your site js:
+
+$(document).aq.validate();
+
+Validations that are performed, and rules to activate them:
+* required - A value is required for the field. Either give a class of 'aq-validate-required' or a 'required' attribute
+* Max length - Maximum length of field. Give a 'maxlength' attribute
+* Number - Require the field to be a number. Either give a class of 'aq-validate-number' or type of 'number'
+* Email - Check it's a valid email address, uses regexp from http://www.regular-expressions.info/email.html. Either give a class of 'aq-validate-email' or type of 'email'
+* Website address - Check it's a valid web address (that is, starts with http: or https:). Give a class of aq-validate-website
+* Pattern validation - Checks against a regexp pattern, as defined in the HTML5 spec. Give the pattern inside the 'pattern' attribute
+* Password matching - Check that a password matches. Make sure that both fields have class of 'aq-validate-passwordmatch', that the id of the confirm ends in 'confirm', and that both fields are next to each other inside 'div' containers
