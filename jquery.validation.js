@@ -41,11 +41,12 @@ $.fn.aq.validate = function(params){
             }
 
             $(container).append('<div class="aq-validate-message">'+msg+'</div>');
+            $(container).css({"position": "relative"});
             e = $(container).children('.aq-validate-message');
             e.hide();
             var pos = $(container).children('input').offset();
             var width = $(container).children('input').width()+15;
-            e.css({"left": (pos.left+width) + 'px', "top": pos.top + "px", "position": "absolute"});
+            e.css({"right": '1px', "top": "3px", "position": "absolute"});
             e.fadeIn();
 
             $(container).children('input').addClass('aq-validate-error');
@@ -170,7 +171,7 @@ $.fn.aq.validate = function(params){
         });
 
 
-        $('input[type=submit]').live('click', function(){
+        $('input[type=submit], input[type=image]').live('click', function(){
             $('input, select').blur();
             if ( $('.aq-validate-error').size() > 0) {
                 $(document).aq.alert({'message':'There are errors that need to be corrected'});
